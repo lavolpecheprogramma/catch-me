@@ -10,8 +10,8 @@ function MouseRaycaster(parent) {
 
 MouseRaycaster.prototype.create = function() {
 	document.addEventListener( 'mousemove', this.onMouseMove, false );
-	document.addEventListener( 'touchstart', this.onTouch, false );
-	document.addEventListener( 'touchmove', this.onTouch, false );
+	document.addEventListener( 'touchstart', this.onTouch,  {passive: false});
+	document.addEventListener( 'touchmove', this.onTouch,  {passive: false});
 };
 
 MouseRaycaster.prototype.onMouseMove = function(e) {
@@ -19,6 +19,8 @@ MouseRaycaster.prototype.onMouseMove = function(e) {
 	this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 };
 MouseRaycaster.prototype.onTouch = function(e) {
+	e.preventDefault();
+	e.stopPropagation();
 	if(e.touches.length){
 		this.mouse.x = ( e.touches[0].clientX / window.innerWidth ) * 2 - 1;
 		this.mouse.y = - ( e.touches[0].clientY / window.innerHeight ) * 2 + 1;
