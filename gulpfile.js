@@ -28,7 +28,7 @@ var browserSync = require('browser-sync').create();
 
 var app  = './app';
 var tmp = './tmp';
-var dist = './public';
+var dist = './docs';
 
 var env = process.env.NODE_ENV || 'development';
 var isDev = env !== 'production';
