@@ -2,6 +2,8 @@
 
 This is a little experiment using Threejs. The idea is to create a simple but also fun and challenging game where a 3D cube will move away if you try to get the mouse over it.
 
+https://lavolpecheprogramma.github.io/catch-me/
+
 ## Dependencies
 
 - Three.js
