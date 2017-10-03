@@ -24,12 +24,13 @@ body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	background-color: #e8e4e4;
+	color: white;
 }
 
 body {
-	color: white;
-	background: black;
 	font-size: 14px;
+    font-family: 'Muli', sans-serif;
 }
 
 canvas {
@@ -38,16 +39,12 @@ canvas {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	z-index: 2;
+	pointer-events: none;
 }
 
-
-h2 {
-	font-size: 16px;
+h2{
 	text-transform: uppercase;
-	font-weight: 700;
-	margin-top: @space*3;
-	margin-bottom: @space;
-	.user-select(auto);
 }
 
 h3{
@@ -121,6 +118,7 @@ p {
 		padding: @space*2 0;
 		pointer-events: none;
 		visibility: hidden;
+		z-index: 1;
 		.left{
 			position: absolute;
 			left: @space*2;
@@ -128,12 +126,37 @@ p {
 		.right{
 			position: absolute;
 			right: @space*2;
+			font-size: 13px;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+		.title{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+		}
+		h1{
+			font-size: 60px;
+			line-height: 60px;
+			margin-bottom: 0;
+		}
+		h2 {
+			font-size: 16px;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-top: @space;
+			margin-bottom: 0;
+			.user-select(auto);
 		}
 	}
 
 	&#about{
 		background-color: rgba(0, 0, 0, 0.7);
 		padding: 0;
+		z-index: 3;
 		.aboutText{
 			height: 100%;
 			max-height: 100%;
@@ -150,6 +173,10 @@ p {
 			top: @space*2;
 			right: @space*2;
 			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: bold;
+			text-decoration: none;
+			font-size: 13px;
 		}
 	}
 }

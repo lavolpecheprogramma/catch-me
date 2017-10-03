@@ -1,7 +1,7 @@
 var CameraManager = require('./components/cameraManager.js');
 var World = require('./components/world.js');
 
-var backgroundColor = 0xe8e4e4;
+// var backgroundColor = 0xe8e4e4;
 
 var Scene = function(){ this.pageVisibility = true; };
 
@@ -26,14 +26,15 @@ Scene.prototype.createScene = function() {
 Scene.prototype.createRenderer = function(){
 
 	this.scene = new THREE.Scene();
-	this.scene.background = new THREE.Color( backgroundColor );
+	// this.scene.background = new THREE.Color( backgroundColor );
 
 	//get the width and height
 	this.w_w = window.innerWidth;
 	this.w_h = window.innerHeight;
 
 	//get the renderer
-	this.renderer = new THREE.WebGLRenderer({ antialias: true });
+	this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+	this.renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
 	this.renderer.setSize(this.w_w, this.w_h);
 
 	//append the rederer to the body

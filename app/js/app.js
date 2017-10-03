@@ -1,4 +1,3 @@
-// window.$ = window.jQuery = require('jquery');
 window._ = window.underscore = require('underscore');
 
 var Utils = require('./utils.js');

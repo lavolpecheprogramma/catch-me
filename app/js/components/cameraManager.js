@@ -11,7 +11,6 @@ CameraManager.prototype.create = function() {
 	var aspect = this.parent.w_w / this.parent.w_h;
 
 	this.camera = new THREE.PerspectiveCamera( 75, aspect, 10, 1000 );
-
 	this.camera.position.set(
 		this.opts.cameraPosition.x,
 		this.opts.cameraPosition.y,
@@ -22,6 +21,10 @@ CameraManager.prototype.create = function() {
 
 CameraManager.prototype.onResize = function() {
 	this.camera.aspect = this.parent.w_w / this.parent.w_h;
+	this.camera.left = this.parent.w_w / - 2;
+    this.camera.right = this.parent.w_w / 2;
+    this.camera.top = this.parent.w_h / 2;
+    this.camera.bottom = this.parent.w_h / - 2;
 	this.camera.updateProjectionMatrix();
 }
 
