@@ -19,7 +19,6 @@ MouseRaycaster.prototype.onMouseMove = function(e) {
 	this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 };
 MouseRaycaster.prototype.onTouch = function(e) {
-	e.preventDefault();
 	e.stopPropagation();
 	if(e.touches.length){
 		this.mouse.x = ( e.touches[0].clientX / window.innerWidth ) * 2 - 1;
